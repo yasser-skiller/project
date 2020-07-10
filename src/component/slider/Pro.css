@@ -1,0 +1,9 @@
+#carousel-item{
+    filter: grayscale(0%);
+    height: 300px;
+}
+img{
+    background-color: rgba(0, 0, 0, 0.5);
+   
+
+}

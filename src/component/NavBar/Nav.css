@@ -1,0 +1,14 @@
+.act{
+    border-bottom: yellowgreen 3px solid;
+}
+.navbar-brand{
+    border-bottom:  none !important;
+}
+
+.navbar-toggler{
+    color: #fff !important;
+    border: 2px  solid  #7f7f7f !important;
+}
+.navbar-toggler-icon{
+    background-image: url('../v.png') !important;
+}

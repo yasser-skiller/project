@@ -1,0 +1,23 @@
+:root{
+  --mainBlue   : rgb(14, 18, 226);
+  --textwhite  : #fff;
+  --mainWhite  : #f3f3f3;
+  --mainDark   : #050505;
+  --mainYellow : #ffa400;
+}
+body{
+  font-family: 'Cairo', sans-serif !important;
+  color: var(--mainDark) !important;
+}
+
+.text-blue{
+  color: var(--mainBlue);
+  font-size: 1.7rem;
+  float: right;
+  margin: 1.5rem 0;
+  
+}
+.text-normal{
+  color: var(--textwhite);
+  font-size: 1.3rem;
+}

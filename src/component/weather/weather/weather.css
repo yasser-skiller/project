@@ -1,0 +1,298 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+:root {
+  --bgImage: url("https://upload.wikimedia.org/wikipedia/commons/b/bd/SunFromClouds.jpg");
+  --loading: "loading";
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  min-height: 100%;
+  font-family: Oswald;
+   background: url(https://s3-us-west-2.amazonaws.com/i.cdpn.io/393187.gdQaJV.small.6a02434c-55f4-4333-ba2d-b8cac6158924.png) no-repeat fixed;
+  background-size:cover; 
+}
+
+.weatherApp {
+    margin: auto;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  flex-direction: column;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background: #d1d1d1;
+  font-size: 1.5em;
+}
+
+.header-logo {
+  margin: 0 0 0 15px;
+  white-space: nowrap;
+}
+
+#header-nav {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-search-input {
+  -webkit-appearance: none;
+  outline: none;
+  border: none;
+  box-shadow: none;
+  text-align: center;
+  background: #f2f2f2;
+  font-size: 1em;
+  font-family: Oswald;
+  width: 100%;
+}
+
+.header-search {
+  flex: 2;
+  padding: 5px;
+}
+
+.header-nav-link {
+  text-align: right;
+}
+
+.header-nav-menu {
+  background: none;
+  cursor: pointer;
+  display: none;
+  text-align: center;
+  margin: 0;
+  padding: 10px 20px 11px;
+  text-decoration: none;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    padding: 0px;
+  }
+
+  .header-logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 15px 0 0;
+  }
+
+  .header-nav-menu {
+    display: flex;
+  }
+
+  #header-nav {
+    display: none;
+    padding-top: 15px;
+    background: rgb(225, 225, 225);
+    width: 100%;
+  }
+
+  .header-nav-link {
+    display: flex;
+    margin: 15px;
+    align-self: flex-start;
+  }
+
+  .header-search {
+    display: flex;
+    margin: 5px;
+    width: 90%;
+  }
+
+  .header-search-input {
+    width: 90%;
+    flex: 1;
+  }
+
+  input[type="checkbox"]:checked ~ #header-nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+}
+
+.language,
+.unit {
+  width: 3em !important;
+  font-size: 0.75em;
+  margin-right: 0.5em;
+}
+
+.language {
+  width: 5em !important;
+}
+
+.spinner {
+  border-radius: 50%;
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  animation: spin 5s infinite linear reverse;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.spinner:after {
+  content: var(--loading);
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  font-size: 1.5em;
+  color: black;
+}
+
+@keyframes spin {
+  0% {
+    box-shadow: 0 0em 1em 0.25em orange, 0 0 1.5em 2.5em orange inset;
+  }
+
+  25% {
+    box-shadow: 0 0em 1em 0.5em orange, 0 0 1.5em 2.5em orange inset;
+  }
+
+  50% {
+    box-shadow: 0 0em 1em 0.25em orange, 0 0 0 5em orange inset;
+  }
+
+  80% {
+    box-shadow: 0 0em 1em 0.25em white, 0px 0px 0 2px white inset;
+  }
+}
+
+.cast {
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: var(--bgImage);
+  background-size: cover;
+  background-blend-mode: luminosity;
+  text-shadow: 2px 2px 5px grey;
+}
+
+.today {
+  text-align: center;
+  padding: 1em;
+}
+
+.city {
+  font-size: 10vmin;
+  margin: 0.1em;
+}
+
+.details {
+  border-radius: 0.5em;
+  background: hsla(0, 0%, 0%, 0.25);
+  padding: 0.5em;
+}
+
+.temperature {
+  border-radius: 50%;
+  width: 9em;
+  height: 9em;
+  border: 0.5em solid white;
+  background: hsla(0, 0%, 0%, 0.25);
+  padding: 0.5em;
+  margin: 0.5em auto;
+}
+
+.cast .fore {
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.fore > div {
+  padding: 0.5em;
+  text-align: center;
+  background: hsla(0, 0%, 0%, 0.5);
+  box-sizing: border-box;
+  flex: 1;
+  margin-left: 5px;
+  margin-bottom: 5px;
+}
+.fore > div:nth-child(5n + 1) {
+  margin-left: 0px;
+}
+
+.toggle {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  width: 100%;
+}
+
+.toggle input {
+  display: none;
+}
+
+.toggle input:checked ~ label .toggler {
+  left: 0%;
+}
+
+.toggle input + label .toggler {
+  left: 50%;
+}
+
+.toggle label {
+  box-shadow: inset 0 1px 0.25em rgba(0, 0, 0, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.toggle label .toggleLabel {
+  padding: 0.25em;
+  min-height: 1em;
+  min-width: 1em;
+  text-align: center;
+  z-index: 1;
+  flex: 1;
+  transition: all 0.5s;
+}
+
+.toggler {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #7db9e8 0%,
+    #207cca 26%,
+    #2989d8 76%,
+    #1e5799 100%
+  );
+  transition: all 0.5s;
+}

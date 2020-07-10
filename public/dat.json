@@ -1,0 +1,49 @@
+{
+    "images" : [
+        {
+            "id"  : 1,
+            "image" : "/img/1.JPEG",
+            "title" : "rice",
+            "body" : "Best food"
+        },
+        {
+            "id"  : 2,
+            "image" : "/img/2.JPEG",
+            "title" : "rice",
+            "body" : "Best food"
+        },
+        {
+            "id"  : 3,
+            "image" : "/img/3.JPEG",
+            "title" : "rice",
+            "body" : "Best food"
+        },
+        {
+            "id"  : 4,
+            "image" : "/img/item-4.JPEG",
+            "title" : "rice",
+            "body" : "Best food"
+        },{
+            "id"  : 5,
+            "image" : "/img/item-5.JPEG",
+            "title" : "rice",
+            "body" : "Best food"
+        },{
+            "id"  : 6,
+            "image" : "/img/item-6.JPEG",
+            "title" : "rice",
+            "body" : "Best food"
+        },{
+            "id"  : 7,
+            "image" : "/img/item-7.JPEG",
+            "title" : "rice",
+            "body" : "Best food"
+        },{
+            "id"  : 8,
+            "image" : "/img/item-8.JPEG",
+            "title" : "rice",
+            "body" : "Best food"
+        }
+    ]
+    
+}
